@@ -1,43 +1,39 @@
 import 'package:flutter/material.dart';
+import 'company_window.dart';
+import 'phone_input.dart';
+import 'otp_verification.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'OTP Verification App',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => CompanyWindow(),
+        '/phone_input': (context) => PhoneInput(),
+        '/otp_verification': (context) => OTPVerification(),
+        '/home': (context) => HomePage(), // Replace with your home page
+      },
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
+        title: Text('Home'),
       ),
       body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
+        child: Text('Welcome to the Home Page!'),
       ),
     );
   }
 }
+
