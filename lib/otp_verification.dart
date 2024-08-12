@@ -16,7 +16,7 @@ class _OTPVerificationState extends State<OTPVerification> {
     final otp = _otpControllers.map((controller) => controller.text).join();
 
     if (otp.length == 4) {
-      String apiKey = 'your_api_key'; // Replace this with the actual API key
+      String apiKey = 'http://devapiv4.dealsdray.com/api/v2/user/otp/verification'; 
       Navigator.push(
         context,
         MaterialPageRoute(
